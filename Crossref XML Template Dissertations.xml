@@ -1,0 +1,51 @@
+-- Prefix 
+
+<?xml version="1.0" encoding="UTF-8"?>
+<doi_batch xmlns="http://www.crossref.org/schema/4.4.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="4.4.2" xsi:schemaLocation="http://www.crossref.org/schema/4.4.2 http://www.crossref.org/schemas/crossref4.4.2.xsd">
+    
+    <head>
+        <doi_batch_id>etd-2020-05-19-1716</doi_batch_id>
+        <timestamp>202005191716</timestamp>
+        <depositor>
+            <depositor_name>University of Rhode Island</depositor_name>
+            <email_address>jalovett@uri.edu</email_address>
+        </depositor>
+        <registrant>University of Rhode Island</registrant>
+    </head>
+    <body>
+        
+-- Row Template 
+
+        <dissertation>
+            <contributors>
+                <person_name sequence="first" contributor_role="author">
+                    <given_name>{{jsonize(cells["author1_fname"].value).replace('"', '')}}</given_name>
+                    <surname>{{jsonize(cells["author1_lname"].value).replace('"', '')}}</surname>
+                </person_name>
+            </contributors>
+            <titles>
+                <title>
+                    {{jsonize(cells["title"].value).replace('"', '')}}
+                </title>
+            </titles>
+            <approval_date>
+                <year>{{jsonize(cells["publication_date"].value).replace('"', '')}}</year>
+            </approval_date>
+            <institution>
+                <institution_name>University of Rhode Island</institution_name>
+                <institution_acronym>URI</institution_acronym>
+                <institution_place>Kingston, RI</institution_place>
+            </institution>
+            <doi_data>
+                <doi>{{jsonize(cells["DOI"].value).replace('"', '')}}</doi>
+                <resource>
+                    {{jsonize(cells["calc_url"].value).replace('"', '')}}
+                </resource>
+            </doi_data>
+        </dissertation>
+        
+-- Suffix 
+
+    </body>
+</doi_batch>
+
